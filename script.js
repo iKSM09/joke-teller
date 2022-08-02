@@ -112,9 +112,8 @@ const toggleButton = () => {
 
 // Passing Joke to VoiceRSS API
 const tellMe = (joke) => {
-  console.log("tell me:", joke);
   VoiceRSS.speech({
-    // key: "7d30c9015fba4761a3ba476df049c9f9",
+    key: "7d30c9015fba4761a3ba476df049c9f9",
     src: joke,
     hl: "en-us",
     v: "Linda",
@@ -129,7 +128,8 @@ const tellMe = (joke) => {
 const getJokes = async () => {
   let joke = "";
 
-  const jokeApiUrl = "";
+  const jokeApiUrl =
+    "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit";
   try {
     const response = await fetch(jokeApiUrl);
     const data = await response.json();
